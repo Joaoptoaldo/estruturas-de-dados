@@ -47,3 +47,5 @@ env/
 # === sistema operacional ===
 .DS_Store
 Thumbs.db
+.env
+
