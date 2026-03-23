@@ -1,7 +1,7 @@
 class Clima:
     def __init__(self, ano, mes, temperatura, precipitacao):
         """_sumary_
-        metodo construtor da classe clima, recebe os dados do clima e os atribui aos atributos da classe_
+        metodo construtor da classe clima, recebe os dados do clima e os atribui aos atributos da classe
 
         Args:
             ano (_type_): ano do registro climático
@@ -21,7 +21,7 @@ class Clima:
             _type_: string formatada com os dados do clima
         """
         chuva = "nada"
-        if self.precipitacao == 3:
+        if self.precipitacao == 3:#self serve para acessar os atributos do objeto atual
             chuva = "muita"
         elif self.precipitacao == 2:
             chuva = "média"
@@ -35,10 +35,9 @@ class Clima:
 
         Args:
             outro (_type_): objeto da classe clima a ser comparado com o objeto atual
-
         Returns:
             _type_: True se os objetos forem considerados iguais, False caso contrário
         """
-        if not isinstance(outro, Clima):
+        if not isinstance(outro, Clima):# verifica se o outro objeto é uma instância da classe clima, caso contrário, retorna False
             return False
         return self.ano == outro.ano and self.mes == outro.mes

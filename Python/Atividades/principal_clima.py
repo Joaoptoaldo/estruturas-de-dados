@@ -1,14 +1,14 @@
-import os
-from clima import Clima
-
+import os # importa o módulo os para manipulação de arquivos e diretórios
+from clima import Clima 
 
 class Principal:
     def __init__(self):
-        self.dados = []
-        pasta_script = os.path.dirname(os.path.abspath(__file__))
+        self.dados = [] 
+        pasta_script = os.path.dirname(os.path.abspath(__file__)) 
         pasta_projeto = os.path.abspath(os.path.join(pasta_script, "..", ".."))
         self.arquivo = os.path.join(pasta_projeto, "data", "dadosClimaticos.csv")
         
+        # listas para armazenar os objetos da classe Clima separados por estação do ano
         self.lista_verao = []
         self.lista_outono = []
         self.lista_inverno = []
@@ -26,16 +26,15 @@ class Principal:
         with open(path, "r", encoding="utf-8") as arq:
             linhas = arq.read().splitlines()
         
-        
         for linha in linhas[1:]:
-            col = linha.split(",")
-            if len(col) < 4:
+            li = linha.split(",")
+            if len(li) < 4:
                 continue
             
-            ano = col[0].strip()
-            mes = col[1].strip()
-            temp = col[2].strip()
-            chuva_txt = col[3].strip().lower()
+            ano = li[0].strip() 
+            mes = li[1].strip()
+            temp = li[2].strip()
+            chuva_txt = li[3].strip().lower() 
             
             peso = 0
             if chuva_txt == "muita":
@@ -57,12 +56,16 @@ class Principal:
     
     def exibir_lista(self):
         print("\n--- DADOS CLIMÁTICOS ---")
-        for item in self.dados:
+        for item in self.dados:# itera sobre a lista de dados climáticos e exibe cada registro formatado usando o método __str__ da classe Clima
             print(item)
         print(f"Total de registros: {len(self.dados)}\n")
+
     
     def analisar(self):
-        chuva_verao = sum(item.precipitacao for item in self.lista_verao)
+        """_summary_
+        método que analisa os dados climáticos, calculando a estação mais chuvosa, a estação menos chuvosa, a estação mais quente e a estação mais amena, e exibe os resultados formatados
+        """
+        chuva_verao = sum(item.precipitacao for item in self.lista_verao) 
         chuva_outono = sum(item.precipitacao for item in self.lista_outono)
         chuva_inverno = sum(item.precipitacao for item in self.lista_inverno)
         

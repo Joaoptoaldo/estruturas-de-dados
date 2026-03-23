@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace SistemaClima {
-    class Principal {
+namespace SistemaClima 
+{
+    class Principal 
+    {
         static List<Clima> dados = new List<Clima>();
         static string arquivo = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "data", "dadosClimaticos.csv"));
         
@@ -13,20 +15,24 @@ namespace SistemaClima {
         
         static string path = arquivo;
 
-        static void Main() {
+        static void Main() 
+        {
             CarregarDados();
             ExibirLista();
             GerarRelatorio();
         }
 
-        static void CarregarDados() {
-            if (string.IsNullOrEmpty(path) || !File.Exists(path)) {
+        static void CarregarDados() 
+        {
+            if (string.IsNullOrEmpty(path) || !File.Exists(path)) 
+            {
                 Console.WriteLine("Erro: CSV não encontrado.");
                 return;
             }
 
             var linhas = File.ReadAllLines(path);
-            for (int i = 1; i < linhas.Length; i++) {
+            for (int i = 1; i < linhas.Length; i++) 
+            {
                 var l = linhas[i];
                 var col = l.Split(',');
                 if (col.Length < 4) continue;
@@ -51,30 +57,35 @@ namespace SistemaClima {
 
         static void ExibirLista() {
             Console.WriteLine("\n--- DADOS CLIMÁTICOS ---");
-            foreach (var item in dados) {
+            foreach (var item in dados) 
+            {
                 Console.WriteLine(item);
             }
             Console.WriteLine($"Total de registros: {dados.Count}\n");
         }
 
-        static void GerarRelatorio() {
+        static void GerarRelatorio() 
+        {
             int chuvaV = 0, chuvaO = 0, chuvaI = 0;
             int quenteV = 0, quenteO = 0, quenteI = 0;
             int amenoV = 0, amenoO = 0, amenoI = 0;
 
-            foreach (var item in lista_verao) {
+            foreach (var item in lista_verao) 
+            {
                 chuvaV += item.Precipitacao;
                 if (item.Temperatura.Equals("Quente", StringComparison.OrdinalIgnoreCase)) quenteV++;
                 if (item.Temperatura.Equals("Ameno", StringComparison.OrdinalIgnoreCase)) amenoV++;
             }
             
-            foreach (var item in lista_outono) {
+            foreach (var item in lista_outono) 
+            {
                 chuvaO += item.Precipitacao;
                 if (item.Temperatura.Equals("Quente", StringComparison.OrdinalIgnoreCase)) quenteO++;
                 if (item.Temperatura.Equals("Ameno", StringComparison.OrdinalIgnoreCase)) amenoO++;
             }
             
-            foreach (var item in lista_inverno) {
+            foreach (var item in lista_inverno) 
+            {
                 chuvaI += item.Precipitacao;
                 if (item.Temperatura.Equals("Quente", StringComparison.OrdinalIgnoreCase)) quenteI++;
                 if (item.Temperatura.Equals("Ameno", StringComparison.OrdinalIgnoreCase)) amenoI++;
