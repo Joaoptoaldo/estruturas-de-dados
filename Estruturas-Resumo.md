@@ -135,6 +135,92 @@ Estratégias comuns:
 
 ---
 
+## 4) Pilha (Stack): Last In, First Out (LIFO)
+
+Pilha é uma estrutura onde o último elemento inserido é o primeiro a ser removido.
+
+### Operações principais
+
+- **Push:** Adicionar um elemento no topo da pilha.
+- **Pop:** Remover o elemento do topo da pilha.
+- **Peek/Top:** Visualizar o elemento no topo sem removê-lo.
+
+### Complexidade
+
+- Todas as operações (push, pop, peek): **O(1)**
+
+### Quando usar
+
+- Para rastrear chamadas de função (pilha de execução).
+- Para resolver problemas de backtracking (ex: labirintos, quebra-cabeças).
+- Para avaliar expressões (ex: notação pós-fixada).
+- Para implementar undo/redo em aplicativos.
+- Para verificar correspondência de parênteses em expressões.
+
+---
+
+## 5) Fila (Queue): First In, First Out (FIFO)
+
+Fila é uma estrutura onde o primeiro elemento inserido é o primeiro a ser removido.
+
+### Operações principais
+
+- **Enqueue:** Adicionar um elemento no final da fila.
+- **Dequeue:** Remover o elemento do início da fila.
+- **Peek/Front:** Visualizar o elemento no início sem removê-lo.
+
+### Complexidade
+- Todas as operações (enqueue, dequeue, peek): **O(1)**
+
+### Quando usar
+- Para gerenciar tarefas em ordem de chegada (ex: impressão, atendimento).
+- Para implementar buffers (ex: streaming de dados).
+- Para realizar travessias em largura (BFS) em grafos.
+- Para simular filas de espera (ex: filas de banco, filas de supermercado).
+
+---
+
+## 6) Grafo (Graph) 
+
+Grafo é uma estrutura composta por vértices (nós) e arestas (conexões entre nós).
+
+### Tipos de grafos
+
+- **Grafo dirigido:** arestas têm direção (ex: Twitter).
+- **Grafo não dirigido:** arestas sem direção (ex: Facebook).
+- **Grafo ponderado:** arestas têm peso (ex: mapas de rotas).
+- **Grafo não ponderado:** arestas sem peso (ex: redes sociais).
+
+### Representação
+
+- **Matriz de adjacência:** matriz 2D indicando conexões entre vértices.
+- **Lista de adjacência:** lista de vértices com suas conexões.
+
+### Operações principais
+
+- Adicionar vértice
+- Adicionar aresta
+- Buscar vértice
+- Percorrer vértices (DFS, BFS)
+- Verificar conexões
+
+### Complexidade
+
+- Adicionar vértice: **O(1)**
+- Adicionar aresta: **O(1)** (lista de adjacência), **
+O(1)** (matriz de adjacência)
+- Buscar vértice: **O(V)** (V = número de vértices)
+- Percorrer vértices: **O(V + E)** (V = vértices, E = arestas)
+
+### Quando usar
+
+- Para modelar redes (ex: redes sociais, redes de transporte).
+- Para resolver problemas de caminho mínimo (ex: Dijkstra, A*).
+- Para detectar ciclos e componentes conectados.
+- Para realizar travessias e buscas em estruturas complexas.
+
+---
+
 ## Comparativo rápido
 
 | Estrutura | Melhor para | Busca média | Mantém ordem? |
@@ -143,15 +229,11 @@ Estratégias comuns:
 | Árvore (BST) | Dados ordenados e hierarquia | O(log n)* | Sim (em-ordem) |
 | HashMap | Chave-valor rápido | O(1) | Não |
 | HashSet | Unicidade e presença rápida | O(1) | Não |
+| Pilha (Stack) | LIFO | O(1) | Sim (ordem de inserção) |
+| Fila (Queue) | FIFO | O(1) | Sim (ordem de inserção) |
+| Grafo | Relações complexas | O(V + E) | Não |
+
 
 \* Em árvore balanceada.
 
 ---
-
-## Conclusão
-
-- Use **listas** para dados sequenciais e manipulação simples.
-- Use **árvores** para relações hierárquicas e cenários com ordenação estrutural.
-- Use **hash** (`HashMap`/`HashSet`) quando a prioridade for acesso rápido por chave ou verificação de existência.
-
-Escolher a estrutura correta impacta diretamente desempenho, memória e clareza do código.
