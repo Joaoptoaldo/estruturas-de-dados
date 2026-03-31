@@ -1,3 +1,5 @@
+package aluno;
+
 public class Aluno { 
     public String nome;
     public String email;
@@ -14,7 +16,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" + "nome='" + this.nome + '\'' + ", email='" + this.email + '\'' +  '}';
+        return "Aluno {" + "nome='" + this.nome + '\'' + ", email='" + this.email + '\'' +  '}';
     }
 
     @Override
