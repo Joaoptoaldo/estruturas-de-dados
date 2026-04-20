@@ -1,0 +1,45 @@
+RECURSÃO = repetição sem instruções de loop (for; while; do-while)
+    - Recurso computacional que empilha processos na memória do mesmo método, fazendo isso a repetição
+    - Recursão tem aplicação PERFEITA em ÁRVORES
+ 
+                        100
+                50                  200
+            25      75         150         300
+ 
+    - RECURSÃO COMO REPETIÇÃO, obedece a 3 situações clássicas:
+        a) inicialização da variável de controle
+        b) teste de parada/continuação com a variável de controle
+        c) transformação da variável de controle
+ 
+            for (a; b; c) {
+ 
+            }
+ 
+            for (int i = 0; i < 10; i++) {
+ 
+            }
+           
+            ******************
+ 
+            a;
+            while(b) {
+                c;
+            }
+ 
+            int i = 0;
+            while(i < 10) {
+                i++;
+            }
+ 
+            ******************
+ 
+            a;
+            do {
+                c;
+            } while (b)
+           
+            int i = 0;
+            do {
+                i++;
+            } while (i < 10);
+ 
