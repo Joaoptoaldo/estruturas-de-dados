@@ -15,8 +15,6 @@ void mostrarSequenciaC(int numero) {
     }
 }
  
- 
-
 /*
 recursão como repetição, obedece a 3 situações classicas:
   a) inicialização da variavel de controle (contador);
