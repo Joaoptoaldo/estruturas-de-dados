@@ -1,7 +1,14 @@
 selecao;numero;descricao;quantidade;raridade
-Espanha;9;Gavi;0;false
-Inglaterra;10;Harry Kane;0;true
-Brasil;9;Richarlison;0;false
-Bélgica;7;De Bruyne;0;true
-Alemanha;1;Neuer;0;false
-Coreia do Sul;7;Son;0;true
+Brasil;10;Neymar Jr;0;true
+Brasil;5;Vinicius Jr;0;false
+Argentina;10;Messi;0;true
+Franca;7;Mbappe;0;true
+Portugal;7;Cristiano Ronaldo;0;true
+Inglaterra;9;Harry Kane;0;false
+Alemanha;4;Joshua Kimmich;0;false
+Japao;11;Kubo;0;false
+Marrocos;2;Hakimi;0;false
+Espanha;6;Pedri;0;false
+Croacia;10;Luka Modric;0;true
+Holanda;8;Virgil van Dijk;0;true
+

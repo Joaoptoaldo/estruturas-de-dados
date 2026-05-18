@@ -30,11 +30,9 @@ public class Figura {
     }
 
 
-
     public void setNomeSelecao(String nomeSelecao) {
         this.nomeSelecao = nomeSelecao;
     }
-
 
 
     public int getNumeroFigura() {
@@ -42,17 +40,14 @@ public class Figura {
     }
 
 
-
     public void setNumeroFigura(int numeroFigura) {
         this.numeroFigura = numeroFigura;
     }
 
 
-
     public String getDescricao() {
         return descricao;
     }
-
 
 
     public void setDescricao(String descricao) {
@@ -89,12 +84,12 @@ public class Figura {
      */
     @Override
     public String toString() {
-        return "Figura{" + "nomeSelecao='" + nomeSelecao + '\'' + ", numeroFigura=" + numeroFigura +", descricao='" + descricao + '\'' +", quantidade=" + quantidade +", raridade=" + raridade +'}';
+        return "Figura {" + "nomeSelecao='" + nomeSelecao + '\'' + ", numeroFigura=" + numeroFigura +", descricao='" + descricao + '\'' +", quantidade=" + quantidade +", raridade=" + raridade +'}';
     }
 
 
     /**
-     * verifica se duas figuras são iguais
+     * verifica se duas figuras são iguais (ignora maiúsculas/minúsculas na seleção)
      * @param obj - objeto a ser comparado
      * @return - true se as figuras forem iguais, false caso contrário
      */
@@ -106,16 +101,19 @@ public class Figura {
         Figura figura = (Figura) obj;
 
         if (numeroFigura != figura.numeroFigura) return false;
-        return nomeSelecao.equals(figura.nomeSelecao);
+        if (nomeSelecao == null) {
+            return figura.nomeSelecao == null;
+        }
+        return nomeSelecao.equalsIgnoreCase(figura.nomeSelecao);
     }
 
     /**
-     * retorna o código hash da figura
+     * retorna o código hash da figura (case-insensitive para nomeSelecao)
      * @return - código hash da figura
      */
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(nomeSelecao, numeroFigura);
+        return java.util.Objects.hash(nomeSelecao != null ? nomeSelecao.toLowerCase() : null, numeroFigura);
     }
 
     /**

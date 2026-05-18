@@ -1,4 +1,8 @@
 selecao;numero;descricao;quantidade;raridade
-Brasil;1;Neymar Jr;0;false
+Brasil;10;Neymar Jr;1;false
 Brasil;5;Vinicius Jr;0;false
-Alemanha;4;Joshua Kimmich;0;false
+Argentina;10;Messi;0;true
+Franca;7;Mbappe;0;true
+Portugal;7;Cristiano Ronaldo;0;true
+Espanha;6;Pedri;0;false
+Holanda;8;Virgil van Dijk;0;true

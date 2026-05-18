@@ -3,8 +3,8 @@ package pkg;
 import java.io.BufferedReader;//para ler o arquivo
 import java.io.FileReader;//para abrir o arquivo para leitura
 import java.io.FileWriter;//para escrever no arquivo
-import java.io.PrintWriter;//para escrever no arquivo
-import java.io.IOException;//para lidar com erros de leitura/escrita
+import java.io.IOException;//para escrever no arquivo
+import java.io.PrintWriter;//para lidar com erros de leitura/escrita
 import java.nio.file.Files;//para verificar se o arquivo existe
 import java.nio.file.Path;//para lidar com caminhos de arquivos
 import java.nio.file.Paths;//para montar o caminho completo
@@ -30,6 +30,7 @@ public class GerenciadorArquivo {
      * @return - lista de figuras carregadas do arquivo
      */
     public static List<Figura> carregar(String nomeArquivo) {
+        // lista para armazenar as figuras carregadas
         List<Figura> lista = new ArrayList<>();
         Path caminho = obterCaminho(nomeArquivo);
 
@@ -78,7 +79,7 @@ public class GerenciadorArquivo {
         try {
             Files.createDirectories(caminho.getParent());
         } catch (IOException e) {
-            System.out.println("Não foi possível criar o diretório 'data'.");
+            System.out.println("Não foi possível criar o diretório 'data'");
         }
 
         try (PrintWriter writer = new PrintWriter(new FileWriter(caminho.toFile()))) {

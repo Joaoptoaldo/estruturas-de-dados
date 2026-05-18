@@ -53,21 +53,57 @@ Os arquivos são salvos utilizando o separador `;` (ponto e vírgula) seguindo o
 *   **Equals & HashCode:** Sobrescritos na classe `Figura` para garantir que o método `lista.contains()` identifique figurinhas iguais baseando-se apenas na *Seleção* e no *Número*, ignorando a raridade ou descrição na hora do match.
 *   **Robustez:** Implementado `try-with-resources` para garantir que os fluxos de arquivos sejam fechados corretamente, evitando vazamento de memória (*memory leaks*).
 
-### Como Compilar e Executar
+### Como compilar e executar
 
-#### Compilação
-```bash
-cd projetoAlbumCopa/Java/pkg
-javac *.java
+Para evitar qualquer erro nos caminhos dos arquivos CSV, **sempre execute o programa a partir da raiz do projeto (`projetoAlbumCopa`)**.
+
+#### 1) Compilação
+
+**No Windows (PowerShell / CMD):**
+```powershell
+javac Java\pkg\*.java
 ```
 
-#### Execução
+**No Linux / macOS (Terminal):**
 ```bash
-cd projetoAlbumCopa/Java
-java pkg.Principal
+javac Java/pkg/*.java
 ```
 
-**Nota:** A execução deve ser realizada a partir do diretório `projetoAlbumCopa/Java/` para que o caminho relativo dos arquivos CSV (pasta `Data`) seja encontrado corretamente. O Java executará a classe `Principal` dentro do pacote `pkg`.
+#### 2) Execução
+
+**No Windows (PowerShell / CMD):**
+```powershell
+java -cp Java pkg.Principal
+```
+
+**No Linux / macOS (Terminal):**
+```bash
+java -cp Java pkg.Principal
+```
+
+#### 3) Executar com entrada simulada (redirecionamento):
+```powershell
+java -cp Java pkg.Principal < run_inputs.txt
+```
+
+---
+
+### Exemplos de uso
+
+- **Listar minhas repetidas:** escolha `2` no menu.
+- **Testar match com um arquivo de terceiro:** escolha `5` ou `6` no menu.
+  - O sistema solicitará o nome do arquivo. Digite apenas o nome do arquivo de dados localizado na pasta `projetoAlbumCopa/Data` (ex.: `outro_desejadas.csv` ou `outro_repetidas.csv`) ou o caminho absoluto.
+
+**Nota sobre a pasta `Data`:**
+- Este repositório usa uma única pasta `Data` na raiz do projeto: `projetoAlbumCopa/Data`.
+- Ao executar o programa a partir da raiz do projeto (`projetoAlbumCopa`), o `GerenciadorArquivo` sempre localizará corretamente os arquivos CSV na pasta de dados.
+
+
+### Observações sobre o comportamento de match
+
+- O sistema tenta identificar matches primariamente por **Seleção + Número** (quando ambos coincidem exatamente).
+- Para ser mais tolerante a discrepâncias nos números ou formatações dos nomes, o programa também faz uma comparação adicional por **Seleção + Descrição** (nome do jogador), usando normalização básica (remoção de acentos, trimming e comparação case-insensitive). Isso ajuda a encontrar matches quando os números divergirem ou houver diferenças de caixa/acentuação.
+
 
 ### Estrutura de Dados Utilizadas
 

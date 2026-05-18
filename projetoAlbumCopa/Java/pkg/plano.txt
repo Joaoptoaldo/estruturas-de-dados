@@ -38,5 +38,4 @@ arquivo csv + lista
 
     - figuras_repetidas_pessoais.csv + ListaRepetidasPessoais
 
-
 ListaRepetidosPessoais <==> ListaRepetidasOutro
