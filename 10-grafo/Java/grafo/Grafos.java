@@ -1,3 +1,5 @@
+package grafo;
+
 class Grafo {
     int matrizADJ[][];
     int qtdVertices;
@@ -45,7 +47,7 @@ class Grafo {
             this.matrizADJ[origem][destino] = 1;
         }
     }
-
+    
     void inserirArestaSimetrica(int origem, int destino) {
         if (this.matrizADJ[origem][destino] == 0 && this.matrizADJ[destino][origem] == 0) {
             this.matrizADJ[origem][destino] = 1;

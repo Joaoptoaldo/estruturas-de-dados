@@ -1,0 +1,10 @@
+1) criar a classe Grafo
+	- exemplo da semana passada
+	- matrizADJ
+	- qtdVertices
+	- listaVertices
+2) ler arquivo csv
+	- montar/ordenar a lista de vértices no programa principal e passar para o grafo
+	-  gerar o grafo -> matrizADJ
+
+	
